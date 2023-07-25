@@ -11,6 +11,8 @@ for r in range(2015, (datetime.datetime.now().year+1)):
 
 class Laboratorio(models.Model):
     nombre = models.CharField(max_length=250, verbose_name="Nombre Laboratorio")
+    ciudad = models.CharField(max_length=100, blank=True, null=True, verbose_name="Ciudad")
+    pais = models.CharField(max_length=100, blank=True, null=True, verbose_name="Pais")
     created = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de Creación')
     updated = models.DateTimeField(auto_now=True, verbose_name='Fecha de actualización')
 
@@ -20,6 +22,7 @@ class Laboratorio(models.Model):
 class DirectorGeneral(models.Model):
     nombre = models.CharField(max_length=250, verbose_name="Nombre Director")
     laboratorio = models.OneToOneField("Laboratorio", on_delete=models.CASCADE, verbose_name="Laboratorio")
+    especialidad = models.CharField(max_length=100, blank=True, null=True, verbose_name="Especialidad")
     created = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de Creación')
     updated = models.DateTimeField(auto_now=True, verbose_name='Fecha de actualización')
 
