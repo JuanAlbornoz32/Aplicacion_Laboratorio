@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<h1 class="text-center">Actualizar Laboratorio</h1>
+<div class="row col-6 mt-3">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form|crispy}}
+        <input type="submit" value="Enviar">
+    </form>       
+</div>
+{% endblock content %}
