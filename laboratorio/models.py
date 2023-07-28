@@ -15,6 +15,7 @@ class Laboratorio(models.Model):
     pais = models.CharField(max_length=100, blank=True, null=True, verbose_name="Pais")
     created = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de Creación')
     updated = models.DateTimeField(auto_now=True, verbose_name='Fecha de actualización')
+    num_visitas = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return self.nombre

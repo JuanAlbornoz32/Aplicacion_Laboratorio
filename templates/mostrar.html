@@ -1,9 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1 class="text-center">Informacion de laboratorios</h1>
+<style>
+  th,
+  td {
+      padding: 5px;
+      border: 1px solid;
+  }
+</style>
 
-<table class="table table-bordered">
+<h2 style="text-align: center;">Informacion de laboratorios</h2>
+
+<table align="center" style="margin: 0px auto;">
   <thead>
     <tr>
       <th>Nombre</th>
@@ -29,14 +37,13 @@
   {% endfor %}
   </tbody>  
 </table>
-
-<div>
-  ¿Información de los Laboratorios?<br><br>
-  <a href="{% url 'index' %}"><-- Insertar un nuevo laboratorio</a>
+<br><br>
+<div class="alert alert-danger" role="alert">
+  ¿Información de los Laboratorios?
 </div>
-<br>
+<p>
+  <a href="{% url 'insertar' %}"><-- Insertar un nuevo laboratorio</a>
+</p>
 <p>Usted ha visitado esta pagina {{num_visitas}}</p>
-
-
 
 {% endblock content %}
